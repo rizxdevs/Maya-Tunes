@@ -26,8 +26,12 @@ export default function Landing() {
       {/* Navbar */}
       <nav className="relative z-10 px-6 py-6 max-w-7xl mx-auto w-full flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
-            <Music className="w-6 h-6 text-white" />
+          <div className="w-10 h-10 rounded-full overflow-hidden glass border border-white/5 shadow-lg shadow-primary/20">
+            <img 
+              src="https://cdn.discordapp.com/attachments/1431965943461974227/1458003252468650096/94014ACD-A864-4B64-8D71-9654E35A1340.png?ex=695e0ed7&is=695cbd57&hm=0cbdb5f5345cf02893c6ea2991f103c531db1f761cffe552c38edac616aed0dc&" 
+              alt="Maya"
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className="font-display font-bold text-2xl tracking-tight">Maya</span>
         </div>
@@ -48,6 +52,13 @@ export default function Landing() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto space-y-8"
         >
+          <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl mb-8">
+            <img 
+              src="https://cdn.discordapp.com/attachments/1431965943461974227/1458003252468650096/94014ACD-A864-4B64-8D71-9654E35A1340.png?ex=695e0ed7&is=695cbd57&hm=0cbdb5f5345cf02893c6ea2991f103c531db1f761cffe552c38edac616aed0dc&" 
+              alt="Maya"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-sm font-medium text-primary-foreground/80 mb-4">
             <Heart className="w-4 h-4 text-accent fill-accent" />
             <span>Spreading comfort through sound</span>
@@ -75,8 +86,9 @@ export default function Landing() {
               variant="outline" 
               size="lg" 
               className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5"
+              onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
             >
-              Add to Server
+              Support Server
             </Button>
           </div>
         </motion.div>

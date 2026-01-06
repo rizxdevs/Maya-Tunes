@@ -46,6 +46,24 @@ export default function ServerView() {
           </button>
         </div>
 
+        {/* Status Mini Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {[
+            { label: "Uptime", value: "Bot is Online", icon: Activity, color: "text-green-400" },
+            { label: "Status", value: "Playing Feelings", icon: Music, color: "text-primary" },
+          ].map((stat, i) => (
+            <div key={i} className="glass-card p-4 rounded-xl flex items-center gap-4">
+              <div className={`p-2 rounded-lg bg-white/5 ${stat.color}`}>
+                <stat.icon className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">{stat.label}</p>
+                <p className="text-sm font-bold font-mono">{stat.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column: Player & History */}
@@ -82,17 +100,19 @@ export default function ServerView() {
           </div>
 
           {/* Right Column: Lyrics */}
-          <div className="lg:col-span-1">
-            {/* Pass current track details here - for now hardcoded placeholder/empty */}
-            <LyricsCard title="" />
+          <div className="lg:col-span-1 space-y-8">
+            <LyricsCard title="Lofi Beats to Relax To" />
             
-            <div className="mt-8 p-6 rounded-3xl bg-primary/10 border border-primary/20">
+            <div className="p-6 rounded-3xl bg-primary/10 border border-primary/20">
               <h4 className="font-bold text-lg mb-2 text-primary">Need Help?</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                If the music stops or bot isn't responding, check if Maya has proper permissions in your server.
+                Join our support server if you have any questions or need help with Maya.
               </p>
-              <button className="text-xs font-bold uppercase tracking-wider text-primary hover:text-primary/80 transition-colors">
-                View Documentation &rarr;
+              <button 
+                onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
+                className="text-xs font-bold uppercase tracking-wider text-primary hover:text-primary/80 transition-colors"
+              >
+                Join Support Server &rarr;
               </button>
             </div>
           </div>
