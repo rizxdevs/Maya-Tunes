@@ -1,4 +1,4 @@
-import { pgTable, text, serial, timestamp, boolean, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, serial, timestamp, boolean, jsonb, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -36,8 +36,9 @@ export const musicHistory = pgTable("music_history", {
 export const botStats = pgTable("bot_stats", {
   id: serial("id").primaryKey(),
   uptime: text("uptime"),
-  serverCount: serial("server_count"),
-  userCount: serial("user_count"),
+  serverCount: integer("server_count"),
+  userCount: integer("user_count"),
+  customStatus: text("custom_status").default("Listening to your feelings 🎶"),
   lastUpdated: timestamp("last_updated").defaultNow(),
 });
 

@@ -101,9 +101,16 @@ export async function registerRoutes(
       stats = await storage.updateStats({
         uptime: "2d 4h 12m",
         serverCount: 150,
-        userCount: 4500
+        userCount: 4500,
+        customStatus: "Maya — playing feelings, not just songs"
       });
     }
+    res.json(stats);
+  });
+
+  app.patch('/api/stats', async (req, res) => {
+    // Owner only check would go here
+    const stats = await storage.updateStats(req.body);
     res.json(stats);
   });
 

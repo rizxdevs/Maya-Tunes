@@ -26,7 +26,7 @@ export interface IStorage {
 
   // Stats
   getStats(): Promise<BotStats | undefined>;
-  updateStats(stats: { uptime: string; serverCount: number; userCount: number }): Promise<BotStats>;
+  updateStats(stats: { uptime?: string; serverCount?: number; userCount?: number; customStatus?: string }): Promise<BotStats>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -86,14 +86,14 @@ export class DatabaseStorage implements IStorage {
     return stats;
   }
 
-  async updateStats(stats: { uptime: string; serverCount: number; userCount: number }): Promise<BotStats> {
+  async updateStats(stats: { uptime?: string; serverCount?: number; userCount?: number; customStatus?: string }): Promise<BotStats> {
     // Upsert stats (assuming single row for now)
     const existing = await this.getStats();
     if (existing) {
       const [updated] = await db.update(botStats).set(stats).where(eq(botStats.id, existing.id)).returning();
       return updated;
     } else {
-      const [newStats] = await db.insert(botStats).values(stats).returning();
+      const [newStats] = await db.insert(botStats).values(stats as any).returning();
       return newStats;
     }
   }
