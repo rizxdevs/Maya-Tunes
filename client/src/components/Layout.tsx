@@ -32,6 +32,13 @@ export function Layout({ children }: { children: ReactNode }) {
               className="w-full h-full object-cover"
             />
           </div>
+          <button 
+            onClick={() => window.location.href = "/api/auth/discord"}
+            className="w-full py-2 px-4 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white text-sm font-bold flex items-center justify-center gap-2 transition-all hover-elevate active-elevate-2 shadow-lg shadow-[#5865F2]/20"
+          >
+            <Music className="w-4 h-4 fill-white" />
+            Login to Discord
+          </button>
         </div>
 
         <nav className="space-y-2 flex-1">
