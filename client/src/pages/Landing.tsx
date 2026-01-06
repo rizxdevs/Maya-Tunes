@@ -38,9 +38,9 @@ export default function Landing() {
         <Button 
           variant="outline" 
           className="rounded-full border-white/10 hover:bg-white/5 hover:text-white"
-          onClick={handleAction}
+          onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
         >
-          {user ? "Go to Dashboard" : "Login with Discord"}
+          Support Server
         </Button>
       </nav>
 
