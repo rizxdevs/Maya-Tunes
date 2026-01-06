@@ -13,7 +13,7 @@ export default function Dashboard() {
   const statCards = [
     { label: "Total Servers", value: stats?.serverCount || "...", icon: Server, color: "text-primary" },
     { label: "Users Listening", value: stats?.userCount || "...", icon: Users, color: "text-accent" },
-    { label: "Uptime", value: stats?.uptime || "...", icon: Activity, color: "text-green-400" },
+    { label: "Uptime", value: "Bot is Online", icon: Activity, color: "text-green-400" },
     { label: "System Status", value: "Healthy", icon: Radio, color: "text-blue-400" },
   ];
 
@@ -24,7 +24,7 @@ export default function Dashboard() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
             <h1 className="text-3xl md:text-4xl font-display font-bold mb-2">
-              Welcome back, {user.username} 👋
+              Welcome Maya Management 👋
             </h1>
             <p className="text-muted-foreground">Manage your servers and music playback.</p>
           </div>
@@ -59,17 +59,16 @@ export default function Dashboard() {
 
         {/* Quick Actions / Recent Activity Area (Placeholder) */}
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="md:col-span-2 glass-card p-6 rounded-2xl min-h-[300px]">
-             <h3 className="font-bold text-xl mb-4">Bot Announcements</h3>
-             <div className="space-y-4">
-               <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                 <div className="flex items-center gap-2 mb-2">
-                   <span className="bg-primary/20 text-primary text-xs px-2 py-0.5 rounded-full font-bold">NEW</span>
-                   <span className="text-sm text-muted-foreground">Just now</span>
-                 </div>
-                 <p className="font-medium">Maya v2.0 is live! 🚀</p>
-                 <p className="text-sm text-muted-foreground mt-1">We've updated the dashboard with new controls and lyrics support.</p>
-               </div>
+          <div className="md:col-span-2 glass-card p-6 rounded-2xl min-h-[300px] flex flex-col justify-center items-center text-center space-y-4">
+             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+               <Radio className="w-8 h-8 text-primary" />
+             </div>
+             <div>
+               <h3 className="font-bold text-xl">Ready for Music</h3>
+               <p className="text-muted-foreground mt-2 max-w-md">
+                 Maya is currently idle and ready to bring comfort to your voice channels. 
+                 Select a server to start playing feelings, not just songs.
+               </p>
              </div>
           </div>
           
