@@ -122,7 +122,7 @@ export default function Landing() {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
               <Shield className="w-12 h-12 text-primary mb-6" />
-              <h3 className="text-2xl font-display font-bold mb-4">Meet the Creator</h3>
+              <h3 className="text-2xl font-display font-bold mb-4">About Maya Dev — Rizx</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Maya Music Bot is thoughtfully created and maintained by Rizx, a dedicated developer with a deep appreciation for music and user experience.
               </p>
