@@ -2,7 +2,7 @@ import { useUser } from "@/hooks/use-auth";
 import { useBotStats } from "@/hooks/use-stats";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Server, Activity, Users, Radio, ExternalLink } from "lucide-react";
+import { Server, Activity, Users, Radio, ExternalLink, Music } from "lucide-react";
 
 export default function Dashboard() {
   const { data: user } = useUser();
