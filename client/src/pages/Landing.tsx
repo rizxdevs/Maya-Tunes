@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useUser } from "@/hooks/use-auth";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Music, Heart, Shield, ArrowRight } from "lucide-react";
+import { Music, Heart, Shield, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function Landing() {
   const { data: user } = useUser();
@@ -12,7 +12,6 @@ export default function Landing() {
     if (user) {
       setLocation("/dashboard");
     } else {
-      // In real app, redirect to Discord OAuth
       window.location.href = "/api/auth/discord"; 
     }
   };
@@ -77,18 +76,18 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button 
               size="lg" 
-              className="rounded-full px-8 h-14 text-lg bg-white text-black hover:bg-white/90 shadow-xl shadow-white/10 transition-transform hover:-translate-y-1"
-              onClick={handleAction}
+              className="rounded-full px-8 h-14 text-lg bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/20 transition-transform hover:-translate-y-1 flex items-center gap-2"
+              onClick={() => window.open("https://discord.com/api/oauth2/authorize?client_id=1325752101569433600&permissions=8&scope=bot%20applications.commands", "_blank")}
             >
-              Get Started <ArrowRight className="ml-2 w-5 h-5" />
+              Invite Maya <ExternalLink className="w-5 h-5" />
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5"
-              onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
+              className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white bg-[#5865F2]/10 hover:bg-[#5865F2]/20"
+              onClick={handleAction}
             >
-              Support Server
+              Login with Discord
             </Button>
           </div>
         </motion.div>
