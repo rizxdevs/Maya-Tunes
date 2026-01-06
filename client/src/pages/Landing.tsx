@@ -37,9 +37,9 @@ export default function Landing() {
         <Button 
           variant="outline" 
           className="rounded-full border-white/10 hover:bg-white/5 hover:text-white"
-          onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
+          onClick={() => window.location.href = "/api/auth/discord"}
         >
-          Support Server
+          Login with Discord
         </Button>
       </nav>
 
