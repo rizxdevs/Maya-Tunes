@@ -58,6 +58,34 @@ export default function Dashboard() {
         </div>
 
         {/* Quick Actions / Recent Activity Area (Placeholder) */}
+        {/* Bot Commands Guide */}
+        <div className="glass-card p-6 md:p-8 rounded-3xl">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-3 rounded-xl bg-primary/10 text-primary">
+              <Music className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold">Maya Command Guide</h3>
+              <p className="text-sm text-muted-foreground">Master the feelings of music</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { cmd: "/play", desc: "Plays your favorite songs with gentle vibes" },
+              { cmd: "/stop", desc: "Gracefully stops the music and clears queue" },
+              { cmd: "/pause", desc: "Pauses the current melody" },
+              { cmd: "/resume", desc: "Continues the musical journey" },
+              { cmd: "/skip", desc: "Moves to the next feeling in queue" },
+              { cmd: "/history", desc: "Shows your past musical comfort" },
+            ].map((item, i) => (
+              <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                <p className="font-mono text-primary font-bold mb-1">{item.cmd}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-6">
           <div className="md:col-span-2 glass-card p-6 rounded-2xl min-h-[300px] flex flex-col justify-center items-center text-center space-y-4">
              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { useUser, useLogout } from "@/hooks/use-auth";
-import { LogOut, Music, Server, LayoutDashboard } from "lucide-react";
+import { LogOut, Music, Server, LayoutDashboard, ExternalLink } from "lucide-react";
 
 export function Layout({ children }: { children: ReactNode }) {
   const { data: user } = useUser();
@@ -43,6 +43,15 @@ export function Layout({ children }: { children: ReactNode }) {
             <Server className="w-5 h-5" />
             My Servers
           </Link>
+          <a 
+            href="https://discord.com/api/oauth2/authorize?client_id=1325752101569433600&permissions=8&scope=bot%20applications.commands" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-muted-foreground hover:text-foreground hover:bg-white/5"
+          >
+            <ExternalLink className="w-5 h-5" />
+            Invite Maya
+          </a>
         </nav>
 
         <div className="mt-auto pt-6 border-t border-white/5">
