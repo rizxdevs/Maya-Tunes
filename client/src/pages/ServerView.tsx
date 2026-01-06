@@ -4,7 +4,7 @@ import { useMusicHistory } from "@/hooks/use-music";
 import { Layout } from "@/components/Layout";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { LyricsCard } from "@/components/LyricsCard";
-import { Settings, Clock } from "lucide-react";
+import { Settings, Clock, Activity, Music } from "lucide-react";
 
 export default function ServerView() {
   const [match, params] = useRoute("/servers/:id");
