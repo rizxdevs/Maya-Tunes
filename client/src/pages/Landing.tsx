@@ -77,6 +77,13 @@ export default function Landing() {
             <Button 
               size="lg" 
               className="rounded-full px-8 h-14 text-lg bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/20 transition-transform hover:-translate-y-1 flex items-center gap-2"
+              onClick={handleAction}
+            >
+              Get Started <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button 
+              size="lg"
+              className="rounded-full px-8 h-14 text-lg bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/10 flex items-center gap-2"
               onClick={() => window.open("https://discord.com/api/oauth2/authorize?client_id=1325752101569433600&permissions=8&scope=bot%20applications.commands", "_blank")}
             >
               Invite Maya <ExternalLink className="w-5 h-5" />
@@ -84,10 +91,10 @@ export default function Landing() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white bg-[#5865F2]/10 hover:bg-[#5865F2]/20"
-              onClick={handleAction}
+              className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white"
+              onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
             >
-              Login with Discord
+              Support Server
             </Button>
           </div>
         </motion.div>
