@@ -1,18 +1,86 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, boolean, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+// === TABLE DEFINITIONS ===
+
 export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+  id: text("id").primaryKey(), // Discord ID
+  username: text("username").notNull(),
+  discriminator: text("discriminator").notNull(),
+  avatar: text("avatar"),
+  accessToken: text("access_token"),
+  refreshToken: text("refresh_token"),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+export const servers = pgTable("servers", {
+  id: text("id").primaryKey(), // Guild ID
+  name: text("name").notNull(),
+  icon: text("icon"),
+  ownerId: text("owner_id").notNull(),
+  isBotIn: boolean("is_bot_in").default(false),
+  prefix: text("prefix").default("!"),
 });
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
+export const musicHistory = pgTable("music_history", {
+  id: serial("id").primaryKey(),
+  guildId: text("guild_id").notNull(), // Link to servers.id
+  title: text("title").notNull(),
+  artist: text("artist"),
+  url: text("url"),
+  requesterId: text("requester_id"), // Link to users.id
+  playedAt: timestamp("played_at").defaultNow(),
+});
+
+export const botStats = pgTable("bot_stats", {
+  id: serial("id").primaryKey(),
+  uptime: text("uptime"),
+  serverCount: serial("server_count"),
+  userCount: serial("user_count"),
+  lastUpdated: timestamp("last_updated").defaultNow(),
+});
+
+// === SCHEMAS ===
+
+export const insertUserSchema = createInsertSchema(users);
+export const insertServerSchema = createInsertSchema(servers);
+export const insertHistorySchema = createInsertSchema(musicHistory).omit({ id: true, playedAt: true });
+export const insertStatsSchema = createInsertSchema(botStats).omit({ id: true, lastUpdated: true });
+
+// === TYPES ===
+
 export type User = typeof users.$inferSelect;
+export type InsertUser = z.infer<typeof insertUserSchema>;
+
+export type Server = typeof servers.$inferSelect;
+export type InsertServer = z.infer<typeof insertServerSchema>;
+
+export type MusicHistory = typeof musicHistory.$inferSelect;
+export type InsertMusicHistory = z.infer<typeof insertHistorySchema>;
+
+export type BotStats = typeof botStats.$inferSelect;
+
+// === API CONTRACT TYPES ===
+
+export type UserResponse = User;
+export type ServerResponse = Server & { botInGuild: boolean };
+export type HistoryResponse = MusicHistory;
+export type StatsResponse = BotStats;
+
+export interface LyricsResponse {
+  lyrics: string;
+  source: string;
+}
+
+export interface PlayerStatus {
+  guildId: string;
+  isPlaying: boolean;
+  currentTrack: {
+    title: string;
+    author: string;
+    duration: number;
+    position: number;
+    thumbnail?: string;
+  } | null;
+}
