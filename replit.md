@@ -20,6 +20,6 @@ A modern dashboard for the Maya Music Bot, featuring server management, music co
   - `DATABASE_URL`: Connection string.
   - `SESSION_SECRET`: Session management.
 
-## Future Steps
-- Add real Discord Bot Token and Client ID to `.env`.
-- Integrate with a Lavalink node for real music playback.
+## GitHub Sync
+To push updates to GitHub, use the following command in the Shell:
+`git push https://$GITHUB_USERNAME:$GITHUB_TOKEN@$(echo $GITHUB_REPO_URL | sed 's|https://||') main`
