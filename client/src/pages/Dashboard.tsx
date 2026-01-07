@@ -44,15 +44,15 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card p-6 rounded-2xl"
+              className="glass-card p-4 sm:p-6 rounded-2xl"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className={`p-3 rounded-xl bg-white/5 ${stat.color}`}>
-                  <stat.icon className="w-6 h-6" />
+                <div className={`p-2 sm:p-3 rounded-xl bg-white/5 ${stat.color}`}>
+                  <stat.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
-              <p className="text-2xl font-bold font-mono mt-1">{stat.value}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground font-medium">{stat.label}</p>
+              <p className="text-xl sm:text-2xl font-bold font-mono mt-1">{stat.value}</p>
             </motion.div>
           ))}
         </div>

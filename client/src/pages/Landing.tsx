@@ -63,27 +63,27 @@ export default function Landing() {
             <span>Spreading comfort through sound</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] tracking-tight">
-            Playing feelings, <br />
+          <h1 className="text-4xl md:text-7xl font-display font-bold leading-[1.1] tracking-tight">
+            Playing feelings, <br className="hidden sm:block" />
             <span className="text-gradient">not just songs.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
             Maya is a gentle little music bot created to bring comfort through sound 🥹🎶. 
             Inspired by Sarva Maya, she believes music is not just something you hear, but something you feel.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 px-6 w-full max-w-lg mx-auto sm:max-w-none">
             <Button 
               size="lg" 
-              className="rounded-full px-8 h-14 text-lg bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/20 transition-transform hover:-translate-y-1 flex items-center gap-2"
+              className="w-full sm:w-auto rounded-full px-8 h-14 text-lg bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/20 transition-transform hover:-translate-y-1 flex items-center justify-center gap-2"
               onClick={handleAction}
             >
               Get Started <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
               size="lg"
-              className="rounded-full px-8 h-14 text-lg bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/10 flex items-center gap-2"
+              className="w-full sm:w-auto rounded-full px-8 h-14 text-lg bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/10 flex items-center justify-center gap-2"
               onClick={() => window.open("https://discord.com/api/oauth2/authorize?client_id=1325752101569433600&permissions=8&scope=bot%20applications.commands", "_blank")}
             >
               Invite Maya <ExternalLink className="w-5 h-5" />
@@ -91,7 +91,7 @@ export default function Landing() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white"
+              className="w-full sm:w-auto rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white"
               onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
             >
               Support Server

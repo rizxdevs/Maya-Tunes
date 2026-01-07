@@ -47,18 +47,18 @@ export default function ServerView() {
         </div>
 
         {/* Status Mini Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
           {[
             { label: "Uptime", value: "Bot is Online", icon: Activity, color: "text-green-400" },
             { label: "Status", value: "Playing Feelings", icon: Music, color: "text-primary" },
           ].map((stat, i) => (
-            <div key={i} className="glass-card p-4 rounded-xl flex items-center gap-4">
+            <div key={i} className="glass-card p-3 md:p-4 rounded-xl flex items-center gap-3 md:gap-4">
               <div className={`p-2 rounded-lg bg-white/5 ${stat.color}`}>
-                <stat.icon className="w-5 h-5" />
+                <stat.icon className="w-4 h-4 md:w-5 md:h-5" />
               </div>
               <div>
-                <p className="text-xs text-muted-foreground">{stat.label}</p>
-                <p className="text-sm font-bold font-mono">{stat.value}</p>
+                <p className="text-[10px] md:text-xs text-muted-foreground">{stat.label}</p>
+                <p className="text-xs md:text-sm font-bold font-mono truncate max-w-[80px] md:max-w-none">{stat.value}</p>
               </div>
             </div>
           ))}

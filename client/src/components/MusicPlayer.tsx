@@ -54,49 +54,51 @@ export function MusicPlayer({ guildId }: MusicPlayerProps) {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-4 relative z-10">
-        <button 
-          onClick={() => control({ guildId, action: 'stop' })}
-          disabled={isPending}
-          className="p-3 rounded-full hover:bg-white/10 text-muted-foreground hover:text-white transition-all"
-        >
-          <Square className="w-5 h-5 fill-current" />
-        </button>
-        
-        <button 
-          onClick={() => {
-            control({ guildId, action: isPlaying ? 'pause' : 'resume' });
-            setIsPlaying(!isPlaying);
-          }}
-          disabled={isPending}
-          className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/10"
-        >
-          {isPlaying ? (
-            <Pause className="w-6 h-6 fill-current" />
-          ) : (
-            <Play className="w-6 h-6 fill-current ml-1" />
-          )}
-        </button>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+        <div className="flex items-center justify-center gap-4 w-full md:w-auto">
+          <button 
+            onClick={() => control({ guildId, action: 'stop' })}
+            disabled={isPending}
+            className="p-3 rounded-full hover:bg-white/10 text-muted-foreground hover:text-white transition-all"
+          >
+            <Square className="w-5 h-5 fill-current" />
+          </button>
+          
+          <button 
+            onClick={() => {
+              control({ guildId, action: isPlaying ? 'pause' : 'resume' });
+              setIsPlaying(!isPlaying);
+            }}
+            disabled={isPending}
+            className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/10"
+          >
+            {isPlaying ? (
+              <Pause className="w-6 h-6 fill-current" />
+            ) : (
+              <Play className="w-6 h-6 fill-current ml-1" />
+            )}
+          </button>
 
-        <button 
-          onClick={() => control({ guildId, action: 'skip' })}
-          disabled={isPending}
-          className="p-3 rounded-full hover:bg-white/10 text-muted-foreground hover:text-white transition-all"
-        >
-          <SkipForward className="w-6 h-6 fill-current" />
-        </button>
+          <button 
+            onClick={() => control({ guildId, action: 'skip' })}
+            disabled={isPending}
+            className="p-3 rounded-full hover:bg-white/10 text-muted-foreground hover:text-white transition-all"
+          >
+            <SkipForward className="w-6 h-6 fill-current" />
+          </button>
+        </div>
+
+        {/* Search/Play Input - Now inline on desktop */}
+        <form onSubmit={handlePlay} className="w-full md:w-72">
+          <input
+            type="text"
+            placeholder="Paste URL or search..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full bg-secondary/50 border border-white/5 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/50"
+          />
+        </form>
       </div>
-
-      {/* Search/Play Input */}
-      <form onSubmit={handlePlay} className="relative z-10 mt-4">
-        <input
-          type="text"
-          placeholder="Paste URL or search song..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full bg-secondary/50 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/50"
-        />
-      </form>
     </div>
   );
 }

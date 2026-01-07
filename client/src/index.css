@@ -57,6 +57,13 @@
 }
 
 @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
   .glass {
     @apply bg-card/60 backdrop-blur-xl border border-white/5;
   }
