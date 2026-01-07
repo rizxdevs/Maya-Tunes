@@ -4,7 +4,7 @@
 A modern dashboard for the Maya Music Bot, featuring server management, music controls, lyrics display, and statistics.
 
 ## Features
-- **Landing Page**: "About Maya" and "About Owner" sections with specific branding.
+- **Landing Page**: "About Maya" and "About Maya Developers" sections with specific branding.
 - **Dashboard**: Server list and bot status.
 - **Server View**: Music player controls (Play, Pause, Skip, Stop), Lyrics display, and Music History.
 - **Mock Mode**: Currently runs with mock data for demonstration purposes (since Discord integration was skipped).

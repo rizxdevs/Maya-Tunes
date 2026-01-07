@@ -140,12 +140,12 @@ export default function Landing() {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
               <Shield className="w-12 h-12 text-primary mb-6" />
-              <h3 className="text-2xl font-display font-bold mb-4">About Maya Dev — Rizx</h3>
+              <h3 className="text-2xl font-display font-bold mb-4">About Maya Developers</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Maya Music Bot is thoughtfully created and maintained by Rizx, a dedicated developer with a deep appreciation for music and user experience.
+                Maya Music Bot is thoughtfully created and maintained by the Maya Developers team, a dedicated group of creators with a deep appreciation for music and user experience.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                With a balance of creativity and care, Rizx designed Maya to be both powerful and comforting, blending clean technology with gentle vibes. His vision is simple yet meaningful: to make music feel personal, warm, and welcoming for everyone 🎧🌙
+                With a balance of creativity and care, our team designed Maya to be both powerful and comforting, blending clean technology with gentle vibes. Our vision is simple yet meaningful: to make music feel personal, warm, and welcoming for everyone 🎧🌙
               </p>
             </motion.div>
           </div>
@@ -154,7 +154,7 @@ export default function Landing() {
 
       {/* Footer */}
       <footer className="relative z-10 py-8 border-t border-white/5 text-center text-sm text-muted-foreground">
-        <p>© 2024 Maya Music Bot. Crafted with 💜 by Rizx.</p>
+        <p>© 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.</p>
       </footer>
     </div>
   );
