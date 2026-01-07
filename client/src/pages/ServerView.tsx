@@ -99,9 +99,17 @@ export default function ServerView() {
             </div>
           </div>
 
-          {/* Right Column: Lyrics */}
+          {/* Right Column: Live Lyrics */}
           <div className="lg:col-span-1 space-y-8">
-            <LyricsCard title="Lofi Beats to Relax To" />
+            <div className="relative">
+              <div className="absolute -top-2 -right-2 z-10">
+                <span className="flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                </span>
+              </div>
+              <LyricsCard title="Lofi Beats to Relax To" guildId={id} />
+            </div>
             
             <div className="p-6 rounded-3xl bg-primary/10 border border-primary/20">
               <h4 className="font-bold text-lg mb-2 text-primary">Need Help?</h4>
