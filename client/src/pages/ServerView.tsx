@@ -1,10 +1,10 @@
-import { useRoute, useLocation } from "wouter";
+import { useRoute, Link, useLocation } from "wouter";
 import { useServer } from "@/hooks/use-servers";
 import { useMusicHistory } from "@/hooks/use-music";
 import { Layout } from "@/components/Layout";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { LyricsCard } from "@/components/LyricsCard";
-import { Settings, Clock, Activity, Music } from "lucide-react";
+import { Settings, Clock, Activity, Music, ArrowLeft } from "lucide-react";
 
 export default function ServerView() {
   const [match, params] = useRoute("/servers/:id");
@@ -29,16 +29,20 @@ export default function ServerView() {
 
   return (
     <Layout>
-      <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-8">
+      <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-8 animate-in fade-in duration-700">
+        <Link href="/dashboard" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group mb-2">
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          <span className="text-sm font-medium">Back to Dashboard</span>
+        </Link>
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-             <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-xl font-bold">
+             <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-secondary flex items-center justify-center text-xl font-bold">
                 {server.icon ? <img src={server.icon} className="w-full h-full object-cover rounded-xl" /> : server.name.charAt(0)}
              </div>
              <div>
-               <h1 className="text-2xl font-display font-bold">{server.name}</h1>
-               <p className="text-sm text-muted-foreground">Server Management</p>
+               <h1 className="text-2xl md:text-3xl font-display font-bold">{server.name}</h1>
+               <p className="text-sm text-muted-foreground">Server Management & Music Control</p>
              </div>
           </div>
           <button className="p-2 hover:bg-white/5 rounded-lg text-muted-foreground hover:text-white transition-colors">

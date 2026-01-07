@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { useUser, useLogout } from "@/hooks/use-auth";
-import { LogOut, Music, Server, LayoutDashboard, ExternalLink } from "lucide-react";
+import { LogOut, Music, Server, LayoutDashboard, ExternalLink, ArrowLeft } from "lucide-react";
 
 export function Layout({ children }: { children: ReactNode }) {
   const { data: user } = useUser();
@@ -20,6 +20,9 @@ export function Layout({ children }: { children: ReactNode }) {
       <aside className="w-full md:w-64 glass border-r border-white/5 flex flex-col p-4 md:p-6 sticky top-0 h-auto md:h-screen z-40">
         <div className="flex flex-row md:flex-col items-center justify-between md:justify-start mb-4 md:mb-8 gap-4">
           <div className="flex items-center gap-3">
+            <Link href="/" className="md:hidden p-2 rounded-lg hover:bg-white/5 text-muted-foreground mr-1 flex items-center justify-center">
+              <ArrowLeft className="w-5 h-5" />
+            </Link>
             <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
               <Music className="w-4 h-4 md:w-6 md:h-6 text-white" />
             </div>

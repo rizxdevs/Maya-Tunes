@@ -1,8 +1,9 @@
 import { useUser } from "@/hooks/use-auth";
 import { useBotStats } from "@/hooks/use-stats";
 import { Layout } from "@/components/Layout";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Server, Activity, Users, Radio, ExternalLink, Music } from "lucide-react";
+import { Server, Activity, Users, Radio, ExternalLink, Music, ArrowLeft } from "lucide-react";
 
 export default function Dashboard() {
   const { data: user } = useUser();
@@ -20,6 +21,10 @@ export default function Dashboard() {
   return (
     <Layout>
       <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-10">
+        <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group mb-4">
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          <span className="text-sm font-medium">Back to Home</span>
+        </Link>
         {/* Welcome Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
