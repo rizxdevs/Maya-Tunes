@@ -122,15 +122,13 @@ async function seedData() {
         id: "1",
         name: "Maya's Lounge",
         ownerId: "123456789",
-        isBotIn: true,
-        prefix: "!"
+        isBotIn: true
     });
     await storage.createOrUpdateServer({
         id: "2",
         name: "Test Server",
         ownerId: "123456789",
-        isBotIn: false,
-        prefix: "?"
+        isBotIn: false
     });
     await storage.addHistory({
         guildId: "1",

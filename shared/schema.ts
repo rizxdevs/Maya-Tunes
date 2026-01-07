@@ -20,7 +20,6 @@ export const servers = pgTable("servers", {
   icon: text("icon"),
   ownerId: text("owner_id").notNull(),
   isBotIn: boolean("is_bot_in").default(false),
-  prefix: text("prefix").default("!"),
 });
 
 export const musicHistory = pgTable("music_history", {

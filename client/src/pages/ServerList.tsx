@@ -50,14 +50,14 @@ export default function ServerList() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg truncate pr-4">{server.name}</h3>
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${server.botInGuild ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
-                        {server.botInGuild ? 'Active' : 'Invite Needed'}
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${server.isBotIn ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
+                        {server.isBotIn ? 'Active' : 'Invite Needed'}
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between mt-auto relative z-10">
-                    <span className="text-sm text-muted-foreground font-mono">Prefix: {server.prefix}</span>
+                    <span className="text-sm text-muted-foreground font-mono">Slash Commands Only</span>
                     <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                       <ArrowRight className="w-4 h-4" />
                     </span>
