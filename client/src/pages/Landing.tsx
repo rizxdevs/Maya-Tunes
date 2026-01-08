@@ -159,44 +159,42 @@ export default function Landing() {
           >
             <h3 className="text-2xl font-bold mb-1">Our Trusted Hosting Partner</h3>
             <p className="text-primary font-mono text-sm font-bold tracking-widest mb-4 uppercase">CoreByte Hostings</p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-8">
               Maya Bot is hosted on high-performance infrastructure powered by CoreByte Hostings, ensuring stable and low-latency operation for real-time music streaming and command handling. The bot runs on servers equipped with AMD EPYC processors, DDR5 memory, and NVMe SSD storage, enabling fast event processing, efficient queue handling, and smooth audio playback under high concurrency. With optimized networking across India and Singapore regions, Maya Bot benefits from reduced latency and consistent voice connections. The environment is secured with always-on DDoS protection and continuous monitoring, providing reliable uptime and production-grade stability for large Discord communities.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="rounded-full border-primary/20 hover:bg-primary/10 text-primary px-8 h-12"
+                onClick={() => window.open("https://corebyte.in", "_blank")}
+              >
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Visit CoreByte Website
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="rounded-full border-white/10 hover:bg-white/5 px-8 h-12"
+                onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
+              >
+                <Music className="w-4 h-4 mr-2" />
+                Support Discord
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="relative z-10 py-12 border-t border-white/5 text-center px-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="rounded-full border-white/10 hover:bg-white/5 text-xs font-bold uppercase tracking-wider h-10 px-6"
-              onClick={() => window.open("https://corebyte.in", "_blank")}
-            >
-              <ExternalLink className="w-3 h-3 mr-2" />
-              CoreByte Website
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="rounded-full border-white/10 hover:bg-white/5 text-xs font-bold uppercase tracking-wider h-10 px-6"
-              onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
-            >
-              <Music className="w-3 h-3 mr-2" />
-              Support Discord
-            </Button>
-          </div>
-          <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">
-              © 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.
-            </p>
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">
-              Powering feelings, one song at a time • Hosted with care by CoreByte Hostings
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto space-y-4">
+          <p className="text-sm text-muted-foreground">
+            © 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.
+          </p>
+          <p className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">
+            Powering feelings, one song at a time • Hosted with care by CoreByte Hostings
+          </p>
         </div>
       </footer>
     </div>
