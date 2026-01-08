@@ -155,11 +155,11 @@ export default function Landing() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center p-8 rounded-[2rem] bg-gradient-to-br from-primary/5 to-accent/5 border border-white/5"
+            className="max-w-4xl mx-auto text-center p-8 md:p-12 rounded-[2rem] bg-gradient-to-br from-primary/5 to-accent/5 border border-white/5"
           >
-            <h3 className="text-xl font-bold mb-3">Our Trusted Hosting Partner</h3>
+            <h3 className="text-2xl font-bold mb-4">Our Trusted Hosting Partner</h3>
             <p className="text-muted-foreground leading-relaxed">
-              To ensure Maya stays awake and plays your feelings 24/7 without interruption, we are proudly hosted by our trusted partner. Their high-performance infrastructure allows Maya to maintain crystal-clear audio quality and near-perfect uptime, so your comfort never has to wait.
+              Maya Bot is hosted on high-performance infrastructure powered by CoreByte Hostings, ensuring stable and low-latency operation for real-time music streaming and command handling. The bot runs on servers equipped with AMD EPYC processors, DDR5 memory, and NVMe SSD storage, enabling fast event processing, efficient queue handling, and smooth audio playback under high concurrency. With optimized networking across India and Singapore regions, Maya Bot benefits from reduced latency and consistent voice connections. The environment is secured with always-on DDoS protection and continuous monitoring, providing reliable uptime and production-grade stability for large Discord communities.
             </p>
           </motion.div>
         </div>
