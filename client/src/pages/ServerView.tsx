@@ -121,10 +121,10 @@ export default function ServerView() {
                 Join our support server if you have any questions or need help with Maya.
               </p>
               <button 
-                onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
+                onClick={() => window.open("https://discord.gg/corebyte", "_blank")}
                 className="text-xs font-bold uppercase tracking-wider text-primary hover:text-primary/80 transition-colors"
               >
-                Join Support Server &rarr;
+                Join CoreByte Discord &rarr;
               </button>
             </div>
           </div>

@@ -30,8 +30,8 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
           <div className="hidden md:block w-full aspect-square rounded-full overflow-hidden glass border border-white/5">
             <img 
-              src="https://cdn.discordapp.com/attachments/1431965943461974227/1458003252468650096/94014ACD-A864-4B64-8D71-9654E35A1340.png?ex=695e0ed7&is=695cbd57&hm=0cbdb5f5345cf02893c6ea2991f103c531db1f761cffe552c38edac616aed0dc&" 
-              alt="Maya"
+              src="https://cdn.discordapp.com/attachments/1317511018930339943/1325776263566594058/CoreByte_Hostings_4.png?ex=677e5d95&is=677d0c15&hm=0055743c68339e766e408ec53be386f7848f05477da09743c72b226f9593f6c8&" 
+              alt="Maya Logo"
               className="w-full h-full object-cover"
             />
           </div>

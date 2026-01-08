@@ -25,7 +25,7 @@ export default function Dashboard() {
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span className="text-sm font-medium">Back to Home</span>
         </Link>
-        {/* Welcome Header */}
+// No profile image here since Dashboard uses Layout component for the sidebar
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
             <h1 className="text-3xl md:text-4xl font-display font-bold mb-2">
