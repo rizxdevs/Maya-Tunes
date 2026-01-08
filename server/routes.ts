@@ -5,6 +5,7 @@ import { api } from "@shared/routes";
 import { z } from "zod";
 import session from "express-session";
 import createMemoryStore from "memorystore";
+import passport from "./auth/discord";
 
 const MemoryStore = createMemoryStore(session);
 
@@ -21,25 +22,43 @@ export async function registerRoutes(
     saveUninitialized: false,
     secret: process.env.SESSION_SECRET || 'dev-secret',
   }));
-
+app.use(passport.initialize());
+app.use(passport.session());
+  
   // === Mock Auth Routes ===
   // In a real app, this would use passport-discord
-  app.get('/api/auth/me', (req, res) => {
-    // Mock user for MVP since no Discord Creds provided
-    // In production, check req.user
-    res.json({
-      id: "123456789",
-      username: "MayaFan",
-      discriminator: "0001",
-      avatar: null
-    });
-  });
+  
+// Start Discord Login
+app.get("/api/auth/discord", passport.authenticate("discord"));
 
-  app.post('/api/auth/logout', (req, res) => {
+// Discord callback
+app.get(
+  "/api/auth/discord/callback",
+  passport.authenticate("discord", {
+    failureRedirect: "/",
+  }),
+  (req, res) => {
+    res.redirect("/");
+  }
+);
+
+// Get logged-in user
+app.get("/api/auth/me", (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Not logged in" });
+  }
+  res.json(req.user);
+});
+
+// Logout
+app.post("/api/auth/logout", (req, res) => {
+  req.logout(() => {
     req.session.destroy(() => {
       res.json({ message: "Logged out" });
     });
   });
+});
+
 
   // === Server Routes ===
   app.get(api.servers.list.path, async (req, res) => {
