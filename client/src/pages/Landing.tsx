@@ -93,7 +93,7 @@ export default function Landing() {
               variant="outline" 
               size="lg" 
               className="w-full sm:w-auto rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white flex items-center justify-center gap-2"
-              onClick={() => window.open("https://discord.gg/corebyte", "_blank")}
+              onClick={() => window.open("https://discord.gg/wQ3jUthtaR", "_blank")}
             >
               <SiDiscord className="w-5 h-5" />
               Support Server
@@ -169,7 +169,7 @@ export default function Landing() {
                 variant="outline" 
                 size="lg"
                 className="rounded-full border-primary/20 hover:bg-primary/10 text-primary px-8 h-12 flex items-center justify-center gap-2"
-                onClick={() => window.open("https://corebyte.in", "_blank")}
+                onClick={() => window.open("https://corebyte.cloud/", "_blank")}
               >
                 <ExternalLink className="w-4 h-4" />
                 Visit CoreByte Website
@@ -178,7 +178,7 @@ export default function Landing() {
                 variant="outline" 
                 size="lg"
                 className="rounded-full border-white/10 hover:bg-white/5 px-8 h-12 flex items-center justify-center gap-2"
-                onClick={() => window.open("https://discord.gg/corebyte", "_blank")}
+                onClick={() => window.open("https://discord.gg/wQ3jUthtaR", "_blank")}
               >
                 <SiDiscord className="w-4 h-4" />
                 Support Discord
