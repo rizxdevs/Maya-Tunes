@@ -103,7 +103,7 @@ export default function Landing() {
       {/* About Section */}
       <section className="relative z-10 py-24 bg-card/30 backdrop-blur-sm border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center mb-16">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -149,12 +149,32 @@ export default function Landing() {
               </p>
             </motion.div>
           </div>
+
+          {/* Partner Hosting Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center p-8 rounded-[2rem] bg-gradient-to-br from-primary/5 to-accent/5 border border-white/5"
+          >
+            <h3 className="text-xl font-bold mb-3">Our Trusted Hosting Partner</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              To ensure Maya stays awake and plays your feelings 24/7 without interruption, we are proudly hosted by our trusted partner. Their high-performance infrastructure allows Maya to maintain crystal-clear audio quality and near-perfect uptime, so your comfort never has to wait.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 py-8 border-t border-white/5 text-center text-sm text-muted-foreground">
-        <p>© 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.</p>
+      <footer className="relative z-10 py-12 border-t border-white/5 text-center px-6">
+        <div className="max-w-7xl mx-auto space-y-4">
+          <p className="text-sm text-muted-foreground">
+            © 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.
+          </p>
+          <p className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">
+            Powering feelings, one song at a time • Hosted with care by our partner
+          </p>
+        </div>
       </footer>
     </div>
   );
