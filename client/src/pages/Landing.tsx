@@ -3,6 +3,7 @@ import { useUser } from "@/hooks/use-auth";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Music, Heart, Shield, ArrowRight, ExternalLink } from "lucide-react";
+import { SiDiscord } from "react-icons/si";
 
 export default function Landing() {
   const { data: user } = useUser();
@@ -27,8 +28,8 @@ export default function Landing() {
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full overflow-hidden glass border border-white/5 shadow-lg shadow-primary/20">
             <img 
-              src="https://cdn.discordapp.com/attachments/1317511018930339943/1325776263566594058/CoreByte_Hostings_4.png?ex=677e5d95&is=677d0c15&hm=0055743c68339e766e408ec53be386f7848f05477da09743c72b226f9593f6c8&" 
-              alt="CoreByte Logo"
+              src="https://cdn.discordapp.com/attachments/1431965943461974227/1458003252468650096/94014ACD-A864-4B64-8D71-9654E35A1340.png?ex=695e0ed7&is=695cbd57&hm=0cbdb5f5345cf02893c6ea2991f103c531db1f761cffe552c38edac616aed0dc&" 
+              alt="Maya Logo"
               className="w-full h-full object-cover"
             />
           </div>
@@ -53,8 +54,8 @@ export default function Landing() {
         >
           <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl mb-8">
             <img 
-              src="https://cdn.discordapp.com/attachments/1317511018930339943/1325776263566594058/CoreByte_Hostings_4.png?ex=677e5d95&is=677d0c15&hm=0055743c68339e766e408ec53be386f7848f05477da09743c72b226f9593f6c8&" 
-              alt="Maya Logo"
+              src="https://cdn.discordapp.com/attachments/1431965943461974227/1458003252468650096/94014ACD-A864-4B64-8D71-9654E35A1340.png?ex=695e0ed7&is=695cbd57&hm=0cbdb5f5345cf02893c6ea2991f103c531db1f761cffe552c38edac616aed0dc&" 
+              alt="Maya"
               className="w-full h-full object-cover"
             />
           </div>
@@ -91,9 +92,10 @@ export default function Landing() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="w-full sm:w-auto rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white"
+              className="w-full sm:w-auto rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 text-white flex items-center justify-center gap-2"
               onClick={() => window.open("https://discord.gg/corebyte", "_blank")}
             >
+              <SiDiscord className="w-5 h-5" />
               Support Server
             </Button>
           </div>
@@ -166,19 +168,19 @@ export default function Landing() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="rounded-full border-primary/20 hover:bg-primary/10 text-primary px-8 h-12"
+                className="rounded-full border-primary/20 hover:bg-primary/10 text-primary px-8 h-12 flex items-center justify-center gap-2"
                 onClick={() => window.open("https://corebyte.in", "_blank")}
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
+                <ExternalLink className="w-4 h-4" />
                 Visit CoreByte Website
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="rounded-full border-white/10 hover:bg-white/5 px-8 h-12"
+                className="rounded-full border-white/10 hover:bg-white/5 px-8 h-12 flex items-center justify-center gap-2"
                 onClick={() => window.open("https://discord.gg/corebyte", "_blank")}
               >
-                <Music className="w-4 h-4 mr-2" />
+                <SiDiscord className="w-4 h-4" />
                 Support Discord
               </Button>
             </div>
