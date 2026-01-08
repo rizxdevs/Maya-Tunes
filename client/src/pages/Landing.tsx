@@ -157,7 +157,8 @@ export default function Landing() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center p-8 md:p-12 rounded-[2rem] bg-gradient-to-br from-primary/5 to-accent/5 border border-white/5"
           >
-            <h3 className="text-2xl font-bold mb-4">Our Trusted Hosting Partner</h3>
+            <h3 className="text-2xl font-bold mb-1">Our Trusted Hosting Partner</h3>
+            <p className="text-primary font-mono text-sm font-bold tracking-widest mb-4 uppercase">CoreByte Hostings</p>
             <p className="text-muted-foreground leading-relaxed">
               Maya Bot is hosted on high-performance infrastructure powered by CoreByte Hostings, ensuring stable and low-latency operation for real-time music streaming and command handling. The bot runs on servers equipped with AMD EPYC processors, DDR5 memory, and NVMe SSD storage, enabling fast event processing, efficient queue handling, and smooth audio playback under high concurrency. With optimized networking across India and Singapore regions, Maya Bot benefits from reduced latency and consistent voice connections. The environment is secured with always-on DDoS protection and continuous monitoring, providing reliable uptime and production-grade stability for large Discord communities.
             </p>
