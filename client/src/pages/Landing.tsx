@@ -168,13 +168,35 @@ export default function Landing() {
 
       {/* Footer */}
       <footer className="relative z-10 py-12 border-t border-white/5 text-center px-6">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <p className="text-sm text-muted-foreground">
-            © 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.
-          </p>
-          <p className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">
-            Powering feelings, one song at a time • Hosted with care by our partner
-          </p>
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="rounded-full border-white/10 hover:bg-white/5 text-xs font-bold uppercase tracking-wider h-10 px-6"
+              onClick={() => window.open("https://corebyte.in", "_blank")}
+            >
+              <ExternalLink className="w-3 h-3 mr-2" />
+              CoreByte Website
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="rounded-full border-white/10 hover:bg-white/5 text-xs font-bold uppercase tracking-wider h-10 px-6"
+              onClick={() => window.open("https://discord.gg/dsWzQSGyEp", "_blank")}
+            >
+              <Music className="w-3 h-3 mr-2" />
+              Support Discord
+            </Button>
+          </div>
+          <div className="space-y-2">
+            <p className="text-sm text-muted-foreground">
+              © 2024 Maya Music Bot. Crafted with 💜 by Maya Developers.
+            </p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-medium">
+              Powering feelings, one song at a time • Hosted with care by CoreByte Hostings
+            </p>
+          </div>
         </div>
       </footer>
     </div>
