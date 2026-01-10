@@ -1,14 +1,11 @@
 import { build as esbuild } from "esbuild";
+import { build as viteBuild } from "vite";
 import { rm, readFile } from "fs/promises";
 
-// server deps to bundle to reduce openat(2) syscalls
-// which helps cold start times
 const allowlist = [
-  // IMPORTANT: required to fix build errors
   "dotenv",
   "passport-discord",
 
-  // existing deps
   "@google/generative-ai",
   "axios",
   "connect-pg-simple",
@@ -33,22 +30,29 @@ const allowlist = [
   "ws",
   "xlsx",
   "zod",
-  "zod-validation-error",
+  "zod-validation-error"
 ];
 
 async function buildAll() {
-  // clean dist folder
   await rm("dist", { recursive: true, force: true });
 
+  // 🔹 Build frontend (Vite)
+  console.log("building client...");
+  await viteBuild({
+    build: {
+      outDir: "dist/public",
+      emptyOutDir: false
+    }
+  });
+
+  // 🔹 Build backend
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
-
   const allDeps = [
     ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.devDependencies || {}),
+    ...Object.keys(pkg.devDependencies || {})
   ];
 
-  // externalize everything except allowlist
   const externals = allDeps.filter((dep) => !allowlist.includes(dep));
 
   await esbuild({
@@ -58,11 +62,11 @@ async function buildAll() {
     format: "cjs",
     outfile: "dist/index.cjs",
     define: {
-      "process.env.NODE_ENV": '"production"',
+      "process.env.NODE_ENV": "\"production\""
     },
     minify: true,
     external: [...externals, "dotenv/config"],
-    logLevel: "info",
+    logLevel: "info"
   });
 }
 
